@@ -1,4 +1,9 @@
 import { Controller } from '@nestjs/common';
 
 @Controller('property')
-export class PropertyController {}
+export class PropertyController {
+  @Get()
+  findAll() {
+    return 'all properties';
+  }
+}
