@@ -1,11 +1,19 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  Param,
+  Post,
+  Query,
+} from '@nestjs/common';
 
 @Controller('property')
 export class PropertyController {
   @Get()
-  findAll() {
-    return 'all properties new';
+  findAll(@Query('role') role?: 'intern' | 'admin') {
+    return [];
   }
 
   @Get('onlyget')
@@ -26,6 +34,6 @@ export class PropertyController {
   @Post()
   @HttpCode(202)
   create2(@Body() body: any) {
-    return body;
+    return [];
   }
 }
